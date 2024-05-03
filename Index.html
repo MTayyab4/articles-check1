@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Democratic Republic of Congo</title><style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e79898;
+  font-size: 20px;
+}
+
+header {
+  background-color:#27e6ef; /* Light gray */
+  padding: 20px;
+  border-bottom: 2px solid #0005b3;
+}
+.menu-btn {
+  display: none; /* Hide menu button by default */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    display: inline-block; /* Display menu button on mobile */
+  }
+  
+  .nav-links {
+    display: none; /* Hide navigation links on mobile */
+    flex-direction: column;
+  }
+  
+  .nav-links.active {
+    display: flex; /* Display navigation links when active */
+  }
+}
+
+/* Style for the menu button */
+.menu-btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: #000000;
+}
+
+.menu-btn:hover {
+  color: #007bff;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  max-height: 10px;
+  margin: 0 auto;
+
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #007bff; /* Blue */
+}
+
+main {
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*.left-section:active, .right-section:active {
+  background-color: #007bff;
+  color: #fff;
+}*/
+
+.left-section {
+	float: left;
+	width: 25%;
+	overflow-y: auto;
+	padding: 20px;
+	max-height: 1350px; /* Adjust the max-height value to your needs */
+	scrollbar-width: thin;
+	scrollbar-color: #666 #ccc;
+}
+
+.right-section {
+	float: right;
+	width: 92%;
+	overflow-y: auto;
+	padding: 20px;
+	max-height: 1350px; /* Adjust the max-height value to your needs */
+	scrollbar-width: thin;
+	scrollbar-color: #666 #ccc;
+}
+
+.left-section::-webkit-scrollbar {
+	width: 5px;
+}
+
+.left-section::-webkit-scrollbar-thumb {
+	background-color: #666;
+	border-radius: 10px;
+}
+
+.left-section::-webkit-scrollbar-track {
+	background-color: #ccc;
+}
+
+.right-section::-webkit-scrollbar {
+	width: 5px;
+}
+
+.right-section::-webkit-scrollbar-thumb {
+	background-color: #666;
+	border-radius: 10px;
+}
+
+.right-section::-webkit-scrollbar-track {
+	background-color: #ccc;
+}
+
+
+.left-section {
+  width: 92%;
+  max-width: 450px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left-section input[type="text"] {
+  width: calc(100% - 4px);
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.left-section input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff; /* Blue */
+}
+.title {
+font-weight: bold;
+font-size: 1.4em;
+color: #333;
+background-color: #f0f0f0;
+padding: 10px;
+border-bottom: 2px solid #333;
+}
+
+.chapter {
+font-weight: bold;
+font-size: 1.2em;
+color: #555;
+background-color: #f7f7f7;
+padding: 10px;
+border-bottom: 1px solid #555;
+}
+
+.section {
+font-weight: bold;
+font-size: 1.1em;
+color: #777;
+background-color: #f9f9f9;
+padding: 10px;
+border-bottom: 1px solid #777;
+}
+
+.article {
+font-size: 1.0em;
+color: #999;
+}
+
+.article-list ul {
+padding-left: 20px; /* indentation for nested lists */
+}
+
+.article-list li {
+padding: 10px;
+}
+
+.article-list li:last-child {
+border-bottom: none;
+}
+.article-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-list li {
+  margin-bottom: 6px;
+}
+
+.article-list a {
+  color: #007bff; /* Blue */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.left-section {
+  flex: 1; /* make the left section flexible */
+  overflow-y: auto; /* add a scrollbar if content exceeds height */
+}
+
+@media screen and (max-width: 768px) {
+  .left-section {
+    flex-basis: 200px; /* set a minimum height for mobile */
+  }
+}
+
+.right-section {
+  flex: 1;
+  margin-left: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-section h2 {
+  color: #333;
+}
+
+.right-section p {
+  color: #666;
+}
+
+/*Box shadows*/
+.left-section, .right-section {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+footer {
+  background-color: #e6e6e6; /* Light gray */
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: #007bff; /* Blue */
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .right-section {
+    margin-left: 0;
+  }
+  /*Transitions*/
+.left-section, .right-section {
+  transition: all 0.3s ease;
+}
+
+/*Gradients*/
+.left-section {
+  background: linear-gradient(to bottom, #fff, #f2f2f2);
+}
+
+.right-section {
+  background: linear-gradient(to bottom, #fff, #e6e6e6);
+}
+
+/*Hover effects*/
+.left-section:hover, .right-section:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*Active state*/
+.left-section:active, .right-section:active {
+  background-color: #007bff;
+  color: #fff;
+}
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <img src="Photos/" alt="Democratic Republic of Congo Flag">
+    <nav>
+      <div class="menu-btn">&#9776;</div> <!-- Menu button -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#provider">About Provider</a></li>
+        <li><a href="#overview">Overview</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="content">
+    <div class="left-section">
+      <input type="text" id="searchInput" placeholder="Search..." oninput="filterArticles()">
+      <ul class="article-list" id="articleList">
+<li><a href="#PREAMBULE">PREAMBULE</a></li>
+<li><a href="#TITREIer">TITRE Ier : DES DISPOSITIONS GENERALES</a></li>
+<li><a href="#Chapitre1er">Chapitre 1er : De l’Etat et de la Souveraineté</a></li>
+<li><a href="#Section1ère">Section 1ère : De l’Etat </a></li>
+<li><a href="#article1">Article 1</a></li>
+<li><a href="#article2">Article 2</a></li>
+<li><a href="#article3">Article 3</a></li>
+<li><a href="#article4">Article 4</a></li>
+<li><a href="#Section2">Section 2 : De la Souveraineté </a></li>
+<li><a href="#article5">Article 5</a></li>
+<li><a href="#article6">Article 6</a></li>
+<li><a href="#article7">Article 7</a></li>
+<li><a href="#article8">Article 8</a></li>
+<li><a href="#article9">Article 9</a></li>
+<li><a href="#Chapitre2">Chapitre 2 : De la Nationalité</a></li>
+<li><a href="#article10">Article 10</a></li>
+<li><a href="#article11">Article 11</a></li>
+<li><a href="#article12">Article 12</a></li>
+<li><a href="#article13">Article 13</a></li>
+<li><a href="#article14">Article 14</a></li>
+<li><a href="#article15">Article 15</a></li>
+<li><a href="#article16">Article 16</a></li>
+<li><a href="#article17">Article 17</a></li>
+<li><a href="#article18">Article 18</a></li>
+<li><a href="#article19">Article 19</a></li>
+<li><a href="#article20">Article 20</a></li>
+<li><a href="#article21">Article 21</a></li>
+<li><a href="#article22">Article 22</a></li>
+<li><a href="#article23">Article 23</a></li>
+<li><a href="#article24">Article 24</a></li>
+<li><a href="#article25">Article 25</a></li>
+<li><a href="#article26">Article 26</a></li>
+<li><a href="#article27">Article 27</a></li>
+<li><a href="#article28">Article 28</a></li>
+<li><a href="#article29">Article 29</a></li>
+<li><a href="#article30">Article 30</a></li>
+<li><a href="#article31">Article 31</a></li>
+<li><a href="#article32">Article 32</a></li>
+<li><a href="#article33">Article 33</a></li>
+<li><a href="#article34">Article 34</a></li>
+<li><a href="#article35">Article 35</a></li>
+<li><a href="#article36">Article 36</a></li>
+<li><a href="#article37">Article 37</a></li>
+<li><a href="#article38">Article 38</a></li>
+<li><a href="#article39">Article 39</a></li>
+<li><a href="#article40">Article 40</a></li>
+<li><a href="#article41">Article 41</a></li>
+<li><a href="#article42">Article 42</a></li>
+<li><a href="#article43">Article 43</a></li>
+<li><a href="#article44">Article 44</a></li>
+<li><a href="#article45">Article 45</a></li>
+<li><a href="#article46">Article 46</a></li>
+<li><a href="#article47">Article 47</a></li>
+<li><a href="#article48">Article 48</a></li>
+<li><a href="#article49">Article 49</a></li>
+<li><a href="#article50">Article 50</a></li>
+<li><a href="#article51">Article 51</a></li>
+<li><a href="#article52">Article 52</a></li>
+<li><a href="#article53">Article 53</a></li>
+<li><a href="#article54">Article 54</a></li>
+<li><a href="#article55">Article 55</a></li>
+<li><a href="#article56">Article 56</a></li>
+<li><a href="#article57">Article 57</a></li>
+<li><a href="#article58">Article 58</a></li>
+<li><a href="#article59">Article 59</a></li>
+<li><a href="#article60">Article 60</a></li>
+<li><a href="#article61">Article 61</a></li>
+<li><a href="#article62">Article 62</a></li>
+<li><a href="#article63">Article 63</a></li>
+<li><a href="#article64">Article 64</a></li>
+<li><a href="#article65">Article 65</a></li>
+<li><a href="#article66">Article 66</a></li>
+<li><a href="#article67">Article 67</a></li>
+<li><a href="#article68">Article 68</a></li>
+<li><a href="#article69">Article 69</a></li>
+<li><a href="#article70">Article 70</a></li>
+<li><a href="#article71">Article 71</a></li>
+<li><a href="#article72">Article 72</a></li>
+<li><a href="#article73">Article 73</a></li>
+<li><a href="#article74">Article 74</a></li>
+<li><a href="#article75">Article 75</a></li>
+<li><a href="#article76">Article 76</a></li>
+<li><a href="#article77">Article 77</a></li>
+<li><a href="#article78">Article 78</a></li>
+<li><a href="#article79">Article 79</a></li>
+<li><a href="#article80">Article 80</a></li>
+<li><a href="#article81">Article 81</a></li>
+<li><a href="#article82">Article 82</a></li>
+<li><a href="#article83">Article 83</a></li>
+<li><a href="#article84">Article 84</a></li>
+<li><a href="#article85">Article 85</a></li>
+<li><a href="#article86">Article 86</a></li>
+<li><a href="#article87">Article 87</a></li>
+<li><a href="#article88">Article 88</a></li>
+<li><a href="#article89">Article 89</a></li>
+<li><a href="#article90">Article 90</a></li>
+<li><a href="#article91">Article 91</a></li>
+<li><a href="#article92">Article 92</a></li>
+<li><a href="#article93">Article 93</a></li>
+<li><a href="#article94">Article 94</a></li>
+<li><a href="#article95">Article 95</a></li>
+<li><a href="#article96">Article 96</a></li>
+<li><a href="#article97">Article 97</a></li>
+<li><a href="#article98">Article 98</a></li>
+<li><a href="#article99">Article 99</a></li>
+<li><a href="#article100">Article 100</a></li>
+<li><a href="#article101">Article 101</a></li>
+<li><a href="#article102">Article 102</a></li>
+<li><a href="#article103">Article 103</a></li>
+<li><a href="#article104">Article 104</a></li>
+<li><a href="#article105">Article 105</a></li>
+<li><a href="#article106">Article 106</a></li>
+<li><a href="#article107">Article 107</a></li>
+<li><a href="#article108">Article 108</a></li>
+<li><a href="#article109">Article 109</a></li>
+<li><a href="#article110">Article 110</a></li>
+<li><a href="#article111">Article 111</a></li>
+<li><a href="#article112">Article 112</a></li>
+<li><a href="#article113">Article 113</a></li>
+<li><a href="#article114">Article 114</a></li>
+<li><a href="#article115">Article 115</a></li>
+<li><a href="#article116">Article 116</a></li>
+<li><a href="#article117">Article 117</a></li>
+<li><a href="#article118">Article 118</a></li>
+<li><a href="#article119">Article 119</a></li>
+<li><a href="#article120">Article 120</a></li>
+<li><a href="#article121">Article 121</a></li>
+<li><a href="#article122">Article 122</a></li>
+<li><a href="#article123">Article 123</a></li>
+<li><a href="#article124">Article 124</a></li>
+<li><a href="#article125">Article 125</a></li>
+<li><a href="#article126">Article 126</a></li>
+<li><a href="#article127">Article 127</a></li>
+<li><a href="#article128">Article 128</a></li>
+<li><a href="#article129">Article 129</a></li>
+<li><a href="#article130">Article 130</a></li>
+<li><a href="#article131">Article 131</a></li>
+<li><a href="#article132">Article 132</a></li>
+<li><a href="#article133">Article 133</a></li>
+<li><a href="#article134">Article 134</a></li>
+<li><a href="#article135">Article 135</a></li>
+<li><a href="#article136">Article 136</a></li>
+<li><a href="#article137">Article 137</a></li>
+<li><a href="#article138">Article 138</a></li>
+<li><a href="#article139">Article 139</a></li>
+<li><a href="#article140">Article 140</a></li>
+<li><a href="#article141">Article 141</a></li>
+<li><a href="#article142">Article 142</a></li>
+<li><a href="#article143">Article 143</a></li>
+<li><a href="#article144">Article 144</a></li>
+<li><a href="#article145">Article 145</a></li>
+<li><a href="#article146">Article 146</a></li>
+<li><a href="#article147">Article 147</a></li>
+<li><a href="#article148">Article 148</a></li>
+<li><a href="#article149">Article 149</a></li>
+<li><a href="#article150">Article 150</a></li>
+<li><a href="#article151">Article 151</a></li>
+<li><a href="#article152">Article 152</a></li>
+<li><a href="#article153">Article 153</a></li>
+<li><a href="#article154">Article 154</a></li>
+<li><a href="#article155">Article 155</a></li>
+<li><a href="#article156">Article 156</a></li>
+<li><a href="#article157">Article 157</a></li>
+<li><a href="#article158">Article 158</a></li>
+<li><a href="#article159">Article 159</a></li>
+<li><a href="#article160">Article 160</a></li>
+<li><a href="#article161">Article 161</a></li>
+<li><a href="#article162">Article 162</a></li>
+<li><a href="#article163">Article 163</a></li>
+<li><a href="#article164">Article 164</a></li>
+<li><a href="#article165">Article 165</a></li>
+<li><a href="#article166">Article 166</a></li>
+<li><a href="#article167">Article 167</a></li>
+<li><a href="#article168">Article 168</a></li>
+<li><a href="#article169">Article 169</a></li>
+<li><a href="#article170">Article 170</a></li>
+<li><a href="#article171">Article 171</a></li>
+<li><a href="#article172">Article 172</a></li>
+<li><a href="#article173">Article 173</a></li>
+<li><a href="#article174">Article 174</a></li>
+<li><a href="#article175">Article 175</a></li>
+<li><a href="#article176">Article 176</a></li>
+<li><a href="#article177">Article 177</a></li>
+<li><a href="#article178">Article 178</a></li>
+<li><a href="#article179">Article 179</a></li>
+<li><a href="#article180">Article 180</a></li>
+<li><a href="#article181">Article 181</a></li>
+<li><a href="#article182">Article 182</a></li>
+<li><a href="#article183">Article 183</a></li>
+<li><a href="#article184">Article 184</a></li>
+<li><a href="#article185">Article 185</a></li>
+<li><a href="#article186">Article 186</a></li>
+<li><a href="#article187">Article 187</a></li>
+<li><a href="#article188">Article 188</a></li>
+<li><a href="#article189">Article 189</a></li>
+<li><a href="#article190">Article 190</a></li>
+<li><a href="#article191">Article 191</a></li>
+<li><a href="#article192">Article 192</a></li>
+<li><a href="#article193">Article 193</a></li>
+<li><a href="#article194">Article 194</a></li>
+<li><a href="#article195">Article 195</a></li>
+<li><a href="#article196">Article 196</a></li>
+<li><a href="#article197">Article 197</a></li>
+<li><a href="#article198">Article 198</a></li>
+<li><a href="#article199">Article 199</a></li>
+<li><a href="#article200">Article 200</a></li>
+<li><a href="#article201">Article 201</a></li>
+<li><a href="#article202">Article 202</a></li>
+<li><a href="#article203">Article 203</a></li>
+<li><a href="#article204">Article 204</a></li>
+<li><a href="#article205">Article 205</a></li>
+<li><a href="#article206">Article 206</a></li>
+<li><a href="#article207">Article 207</a></li>
+<li><a href="#article208">Article 208</a></li>
+<li><a href="#article209">Article 209</a></li>
+<li><a href="#article210">Article 210</a></li>
+<li><a href="#article211">Article 211</a></li>
+<li><a href="#article212">Article 212</a></li>
+<li><a href="#article213">Article 213</a></li>
+<li><a href="#article214">Article 214</a></li>
+<li><a href="#article215">Article 215</a></li>
+<li><a href="#article216">Article 216</a></li>
+<li><a href="#article217">Article 217</a></li>
+<li><a href="#article218">Article 218</a></li>
+<li><a href="#article219">Article 219</a></li>
+<li><a href="#article220">Article 220</a></li>
+<li><a href="#article221">Article 221</a></li>
+<li><a href="#article222">Article 222</a></li>
+<li><a href="#article223">Article 223</a></li>
+<li><a href="#article224">Article 224</a></li>
+<li><a href="#article225">Article 225</a></li>
+<li><a href="#article226">Article 226</a></li>
+<li><a href="#article227">Article 227</a></li>
+<li><a href="#article228">Article 228</a></li>
+<li><a href="#article229">Article 229</a></li>
+      </ul>
+    </div>
+    <div class="right-section">
+      <h2 id="PREAMBULE"> PREAMBULE</h2>
+<p> Nous, Peuple congolais, </p>
+<p> Uni par le destin et par l’histoire autour de nobles idéaux de liberté, de fraternité, de solidarité, de justice, de paix et de travail ;  </p>
+<p> Animé par notre volonté commune de bâtir, au cœur de l’Afrique, un Etat de droit et une Nation puissante et prospère, fondée sur une véritable démocratie politique, économique, sociale et culturelle ; </p>
+<p> Considérant que l’injustice avec ses corollaires, l’impunité, le népotisme, le régionalisme, le tribalisme, le clanisme et le clientélisme, par leurs multiples vicissitudes, sont à l’origine de l’inversion générale des valeurs et de la ruine du pays ; </p>
+<p> Affirmant notre détermination à sauvegarder et à consolider l’indépendance et l’unité nationales dans le respect de nos diversités et de nos particularités positives ; </p>
+<p> Réaffirmant  notre adhésion et notre attachement à la Déclaration Universelle des Droits de l’Homme, à la Charte Africaine des Droits de l’Homme et des Peuples, aux Conventions des Nations Unies sur les Droits de l’Enfant et sur les Droits de la Femme, particulièrement à l’objectif de la parité de représentation homme-femme au sein des institutions du pays ainsi qu’aux instruments internationaux relatifs à la protection  et à la  promotion des droits humains ; </p>
+<p> Mû par la volonté de voir tous les Etats Africains s’unir et travailler de concert en vue de promouvoir et de consolider  l’unité africaine à travers les organisations continentales, régionales ou sous-régionales pour offrir de meilleures perspectives de développement et de progrès socio-économique aux Peuples d’Afrique ; </p>
+<p> Attaché à la promotion d’une coopération internationale mutuellement avantageuse et au rapprochement  des peuples  du monde, dans le respect de leurs identités respectives et des principes de la souveraineté et de l’intégrité territoriale de chaque Etat ; </p>
+<p> Réaffirmant notre droit inaliénable et imprescriptible de nous organiser librement et de développer notre vie politique, économique, sociale et culturelle, selon notre génie propre ; </p>
+<p> Conscients de nos responsabilités devant Dieu, la Nation, l’Afrique et le Monde ; </p>
+<p>✓Déclarons solennellement adopter la présente  Constitution. </p>
+ 
+<h3 id="TITREIer">  TITRE Ier : DES DISPOSITIONS GENERALES </h3>
+
+<h4 id="Chapitre1er">  Chapitre 1er : De l’Etat et de la Souveraineté  </h4>
+
+<h5 id="Section1ère"> Section 1ère : De l’Etat   </h5>
+
+      <h6 id="article1">Article 1</h6>
+      <audio controls>
+        <source src="audio/article 1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <p> La République Démocratique du Congo est, dans ses frontières du 30 juin 1960, un Etat de droit,  indépendant, souverain, uni et indivisible, social, démocratique et laïc.   
+
+Son  emblème est le drapeau bleu ciel, orné d’une étoile jaune dans le coin supérieur gauche et traversé en biais d’une bande rouge finement encadrée de jaune. </p>
+
+ 
+          <p> Sa devise est « Justice –Paix – Travail ». </p>
+ 
+<p>Ses armoiries se composent d’une  tête de léopard encadrée à gauche et, à droite, d’une  pointe d’ivoire et d’une lance, le tout reposant sur une pierre. 
+ 	 
+ 	 <p>Son hymne est le « Debout Congolais !» </p> 
+ <p>Sa monnaie est « le  Franc congolais ». </p>
+
+ <p>	Sa langue officielle est le français. </p>
+<p>Ses langues nationales sont le kikongo, le lingala,  le swahili et le tshiluba. L’Etat  en assure la promotion sans discrimination.</p> 
+<p>Les autres langues du pays font partie du patrimoine culturel congolais dont l’Etat  assure la protection. </p>
+
+     <h6 id="article2">Article 2 </h6>
+      <audio controls>
+        <source src="audio/article 2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+     
+<p>La République Démocratique du Congo est composée de la ville de Kinshasa et de 25 provinces dotées de la personnalité juridique.</p> 
+ 
+<P>Ces provinces sont : Bas-Uele, Equateur, Haut-Lomami, Haut-Katanga, HautUele, Ituri, Kasai, Kasai Oriental, Kongo central, Kwango, Kwilu, Lomami, Lualaba, Kasaï Central, Mai-Ndombe, Maniema, Mongala, Nord-Kivu, NordUbangi, Sankuru, Sud-Kivu, Sud-Ubangi, Tanganyika, Tshopo, Tshuapa. </P>
+ 
+<P>Kinshasa est la capitale du pays et le siège des institutions nationales. Elle a le statut de province. La capitale ne peut être transférée dans un autre lieu du pays que par voie de référendum. </P> 
+<P>La répartition des compétences entre l’Etat et les provinces s’effectue conformément aux dispositions du Titre III de la présente Constitution.</P>  
+ 
+<P>Les limites des provinces et celles de la ville de Kinshasa sont fixées par une loi organique. </P> 
+ 
+<h6 id="article3">Article 3 </h6>
+ <audio controls>
+        <source src="audio/article 3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+ 
+<P>Les provinces et les entités territoriales décentralisées de la République Démocratique du Congo sont dotées de la personnalité juridique et sont gérées par les organes locaux. </P>  
+ 
+<P>Ces entités territoriales décentralisées sont la ville, la commune, le secteur et la chefferie. </P>  
+<P>Elles jouissent de la libre administration et de l’autonomie de gestion de leurs ressources économiques, humaines, financières et techniques.</P> 
+ 
+<P> La composition, l’organisation, le fonctionnement de ces entités territoriales décentralisées ainsi que leurs rapports avec l’Etat et les provinces sont fixés par une loi organique. </P>  
+ 	 
+<h6 id="article4">Article 4 </h6>
+ <audio controls>
+        <source src="audio/article 4.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+ 
+<P> De nouvelles provinces et entités territoriales peuvent être créées par démembrement ou par regroupement dans les conditions fixées par la Constitution et par la loi. </P>  
+ 
+<h5 id="Section2">Section 2: De la Souveraineté </h5>
+ 
+<h6 id="article5">Article 5 </h6>
+  <audio controls>
+        <source src="audio/article 5.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+<P>La souveraineté nationale appartient au peuple. Tout pouvoir émane du peuple  qui l’exerce directement par voie de référendum ou d’élections et indirectement par ses représentants. </P>
+ 
+ <P> Aucune fraction du peuple ni aucun individu ne peut s’en attribuer l’exercice. La loi fixe les conditions d’organisation des élections et du référendum. </P>    
+ 
+ <P>Le suffrage est universel, égal et secret. Il est direct ou indirect.</P>  
+ 
+<P> Sans préjudice des dispositions des articles 72, 102 et 106 de la présente Constitution, sont électeurs et éligibles, dans les conditions déterminées par la loi, tous les Congolais de deux sexes, âgés de dix-huit ans révolus et jouissant de leurs droits civils et politiques. </P> 
+
+<h6 id="article6">Article 6 </h6>
+ 	  <audio controls>
+        <source src="audio/article 6.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+ 	 
+<P> Le pluralisme politique est reconnu en République Démocratique du Congo. </P> 
+ 
+<P>Tout Congolais  jouissant de ses droits civils et politiques a le droit de créer un parti politique ou de s’affilier à un parti de son choix.  </P> 
+<P> Les partis politiques concourent à l’expression du suffrage, au renforcement de la conscience nationale et à l’éducation civique. Ils se forment et exercent librement leurs activités dans le respect de la loi, de l’ordre public et des bonnes mœurs.</p> 
+ 
+<P>Les partis politiques sont tenus au respect des  principes de démocratie pluraliste, d’unité et de souveraineté nationales.</p>  
+ 
+<P>Les partis politiques peuvent recevoir de l’Etat des fonds publics destinés à financer leurs campagnes électorales ou leurs activités, dans les conditions définies par la loi. </p> 
+ 
+<h6 id="article7">Article 7 </h6>
+ <audio controls>
+        <source src="audio/article 7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+ 	 
+<P>Nul ne peut instituer, sous quelque forme que ce soit, de parti unique sur tout ou partie du territoire national.  </p> 
+<P>L’institution d’un parti unique constitue une infraction imprescriptible de haute trahison punie par la loi. </p> 
+ 
+<h6 id="article8">Article 8 </h6>
+ <audio controls>
+        <source src="audio/article 8.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+ 
+<P>L’opposition politique est reconnue en République Démocratique du Congo. Les droits liés à son existence, à ses activités et à sa lutte pour la conquête démocratique du pouvoir sont sacrés. Ils ne peuvent subir de limites que celles imposées à tous les partis et activités politiques par la présente Constitution et la loi.  </p> 
+<P>Une loi organique détermine le statut de l’opposition politique. </p> 
+ 
+ 
+<h6 id="article9">Article 9 </h6> 
+ <audio controls>
+        <source src="audio/article 9.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+<P>L’Etat exerce une souveraineté permanente notamment sur le sol, le sous-sol, les eaux et les forêts, sur les espaces aérien, fluvial, lacustre et maritime congolais ainsi que sur la mer territoriale congolaise et sur le plateau  continental. </p>  
+ 
+<P>Les modalités de gestion et de concession du domaine de l’Etat visé à l’alinéa précédent  sont déterminées par la loi. </p> 
+
+          
+<h4 id="Chapitre2">   Chapitre 2 : De la Nationalité </h4>
+ 
+<h6 id="article10">Article 10 </h6>
+ <audio controls>
+        <source src="audio/article 10.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+ 	 
+<P>La  nationalité congolaise est une et exclusive. Elle ne peut être détenue  concurremment avec aucune autre. </p>  
+ 
+<P>La nationalité congolaise est soit d’origine, soit d’acquisition individuelle. </p> 
+ 
+<P>Est Congolais d’origine, toute personne appartenant aux groupes ethniques dont les personnes et le territoire constituaient ce qui est devenu le Congo (présentement la République Démocratique du Congo) à l’indépendance. </p> 
+ 
+<p>Une loi organique détermine les conditions de reconnaissance, d’acquisition, de perte et de recouvrement de la nationalité congolaise. </p>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  All Rights Reserved @ 2024
+</footer>
+
+<script>
+  if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("sw.js")
+      .then((registration) => {
+        console.log("Service worker registered successfully");
+      })
+      .catch((err) => {
+        console.error("Registration failed:", err);
+      });
+  });
+}
+
+
+function filterArticles() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('searchInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById('articleList');
+  li = ul.getElementsByTagName('li');
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName('a')[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = '';
+    } else {
+      li[i].style.display = 'none';
+    }
+  }
+}
+
+// Scroll to the clicked article on the right side
+document.querySelector('.menu-btn').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+
+document.querySelectorAll('#articleList a').forEach(item => {
+  item.addEventListener('click', event => {
+    event.preventDefault();
+    var targetId = item.getAttribute('href').substring(1);
+    var targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
